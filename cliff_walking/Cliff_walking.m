@@ -13,18 +13,19 @@ Q = zeros(4*12,4)   ;
 
 goal = [4 12] ;
 num_goal = find_state_number(goal) ;
-games_played = [0] ;
-for game = 1:10000
+loop_counter = [0] ;
+% main loop
+for i = 1:10000
     n = 0 ;
     start_again = 0 ;
     state = start() ;
  
     while(start_again == 0 )
-        games_played(game , 1) =  n ;
+        loop_counter(i , 1) =  n ;
         
-        num_state = find_state_number(state) ;
-        num_action = epsilon_greedy(Q,num_state,epsilon) ;
-        new_state = movement(num_action,state) ;
+        num_state = find_state_number(state) ; % turns the row and col into a number, ultimately the state number
+        num_action = epsilon_greedy(Q,num_state,epsilon) ; % chooses an action
+        new_state = movement(num_action,state) ; % calculates the new state
         check_on_track = on_track(new_state) ; %if check_on_track == 1 ==> hit the cliff
         %if check_on_track == 2 ==> off the track
         %if check_on_track == 0 ==> on  the track
