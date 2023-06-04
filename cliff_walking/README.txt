@@ -1,4 +1,4 @@
-in this problem we want to go from the start point to the dinish point.
+in this problem we want to go from the start point to the finish point.(check the image cliff_walking_problem.bmp)
 for position we used an excel file to demonstrate where the cliff is and where the path is.
 by indexing we could find where we are in the map.
 epsilon_greedy.m -------> is to find a new action based on the Q table and the state
